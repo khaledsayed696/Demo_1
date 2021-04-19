@@ -1,0 +1,107 @@
+Q1.
+cate: To show the content of file 
+more :To view the text files in the command prompt 
+diffrence: cate can not display all file contant if huge but more can display all file contant if huge 
+
+Q2.
+ use: pwd 
+
+Q3.
+ use: mkdir SAMPLE
+
+Q4.
+  use : mkdir SAMPLE
+ use: mkdir -p SAMPLE/HELLO
+
+Q5.
+   cd/home/user/Hello
+
+Q6.
+   use: rmdir HELLO  
+    or: rm -r HELLO
+Q7:
+   use :  mkdir -p SAMPLE/HELLO
+Q8:
+   use : ls a 
+         ls -LS > filename.txt
+         or 
+         touch .hidden
+
+Q9: rm : command removes files from the system without confirmation
+    rmdir:  command removes the directory
+##
+rm: removes file and with option –r removes directories.
+rmdir: removes empty directories.
+##
+Q10: 
+     mkdir docs
+     mkdir -p docs/WS-ITI
+
+     mkdir dir
+     mkdr -p dir/dir2
+     mkdr -p dir/dir1
+     ls -LS > file1.txt
+     mkdr -p dir/dir1/file1
+#Great ya khaled
+###
+mkdir dir  docs 
+cd dir; mkdir dir1 dir2  // mkdir dir/dir1 dir1/dir2
+cd dir1; touch file1	//touch dir1/file  //touch dir/dir1/file
+cd; cd docs; touch WS-ITI	//touch ../../docs/SW-ITI //touch docs/SW-ITI
+###
+
+Q11: rmdire dir1
+#####
+rmdir dir1
+dir1 is not an empty directory
+rm -r dir1
+#####
+
+Q12: rmdir -p dir2
+#####
+rmdir –p dir/dir2
+dir is also removes as it’s empty after removing dir2
+#####
+Q13:  absolute : cd/home/user/Downloades
+      relative :  cd Downloades
+      ####
+Absolute : /home/user/docs/SW-ITI
+Relative : ../user/docs/SW-ITI
+     #####
+Q14: cp /etc/passwd /home/user/work/my_passwd
+     mv my_passwd old_passwd
+     #Very Good
+Q15:
+     cd
+     cd ~
+     cd ~/
+####
+cd /home/guest
+cd ../../home/guest
+cd ~
+cd
+####
+Q16. ls -d /etc/[w]* #Very good 
+ls /usr/bin/w*
+
+Q17.  head -4 /etc/passwd #Great and you can use this also 
+
+### head -n4 /etc/passwd 
+
+Q18.  tail -5 /etc/passwd
+# we need last 7 not 5 :) 
+tail -7 /etc/passwd
+###################
+You didn't answer Q19 ??
+Q19
+cd
+touch my_code.text
+nano  my_code.text
+
+mohamed_ITI
+
+grep -r "mohamed_ITI"
+
+cd Desktop
+
+grep -R "mohamed_ITI"
