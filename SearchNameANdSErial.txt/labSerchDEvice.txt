@@ -1,0 +1,31 @@
+SerialNumber="ttyACM0"
+string1 = input("PLease Enter the Name of Devic you want to found: ")
+  
+file1 = open("filewithdev.txt", "r") 
+
+flag = 0
+index = 0
+count =0
+  
+for line in file1:  
+    index  =index +1 
+      
+    if string1 in line:
+        
+      flag = 1
+      break 
+          
+if flag == 0: 
+   print('String', string1 , 'Not Found') 
+else: 
+      for line in file1: 
+         if SerialNumber in line:
+            if (count <1) : 
+               count=count+1
+               continue
+            print('String', string1, 'Found In Line', index)
+            print(next(file1), end='')
+            print(next(file1), end='')
+            break
+   
+file1.close() 
