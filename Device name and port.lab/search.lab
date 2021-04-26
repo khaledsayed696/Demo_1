@@ -1,0 +1,27 @@
+SerialNumber="ttyACM0"
+string1 = input("PLease Enter the Name of Devic you want to found: ")
+  
+file1 = open("filewithdev.txt", "r")
+  
+flag = 0
+index = 0
+  
+for line in file1:  
+    index  =index +1 
+      
+    if string1 in line:
+        
+      flag = 1
+      break 
+          
+if flag == 0: 
+   print('String', string1 , 'Not Found') 
+else: 
+    for line in file1:  
+        if SerialNumber in line:
+            print(next(file1).lstrip('N: ttyACM0'),next(file1).lstrip('L: 0'),next(file1).lstrip('S: serial/by-path/pci-0000:00:14.0'))
+            break
+
+   
+file1.close() 
+
