@@ -1,0 +1,29 @@
+
+import cv2
+import numpy as np
+from random import randint
+import moviepy.editor as moviepy
+
+cap = cv2.VideoCapture('FIles/11_output.avi')
+cnt=0
+frame=np.zeros((256,256,3),np.uint8)
+while (cap.isOpened()):
+    ret, frame =cap.read()
+    if(ret):
+        cv2.imshow('Fram', frame)
+        k=cv2.waitKey(100)
+        cnt +=1
+        if k == ord('q'):
+            break
+        elif k == ord('s'):
+            cv2.imwrite('FIles/out_{}.jpg'.format(cnt),frame)
+        elif cnt >60:
+            break
+            
+clip = moviepy.VideoFileClip("FIles/11_output.avi")
+clip.write_videofile("FIles/11_output.mp4")
+    
+    
+cv2.destroyAllWindows()
+
+    
