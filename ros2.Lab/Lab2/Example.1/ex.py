@@ -36,12 +36,14 @@ if __name__=="__main__":
     
     .............................................sub......................................
     
-    #!/usr/bin/env python3
+   #!/usr/bin/env python3
 
 import rclpy 
 from rclpy.node import Node
 from example_interfaces.msg import Int64
 from example_interfaces.srv import AddTwoInts
+from example_interfaces.srv import SetBool
+
 
 class my_node(Node):
     def __init__(self):
@@ -49,25 +51,32 @@ class my_node(Node):
         super().__init__("numebr_counter")
         self.create_subscription(Int64,"number",self.timer_call,10)
         self.get_logger().info("subscriber is started")
+        
+        self.create_timer(1/1,self.timer_call_)
         self.obj_pub=self.create_publisher(Int64,"my_number",10)
 
 
-        self.create_service(AddTwoInts,"First_server",self.srv_call)
+        self.create_service(SetBool,"First_server",self.srv_call)
         
 
     def timer_call(self,msg):
         self.counter+=msg.data
-        self.get_logger().info(str(self.counter)) 
-        
+        self.get_logger().info(str(self.counter-5)) 
+
 
     def srv_call(self,rq,rsp):
-        self.counter=0
-        req_a=rq.a
-        req_b=rq.b
-        rsp.sum=req_a+req_b
-        self.get_logger().info(str(rsp.sum))
+        req_a=rq.data
+        if  rq.data ==True:
+            self.counter=0
+            rsp.success=True
+            rsp.message= "Call done"
         return rsp
 
+    def timer_call_(self):
+        msg_int=Int64()
+        my_data= self.counter
+        msg_int.data=my_data
+        self.obj_pub.publish(msg_int)
 
 def main (args=None):
     rclpy.init(args=args)
@@ -78,30 +87,41 @@ def main (args=None):
 
 if __name__=="__main__":
     main()            
+    
 
 ..................................................Client...........................
 
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from example_interfaces.srv import AddTwoInts
+from example_interfaces.srv import SetBool
+
+
+class my_server(Node):
+    def __init__(self):
+        super().__init__("Client_OOP_node")
+        self.service_client(True)
+
+    def service_client(self,a):
+        client=self.create_client(SetBool,"First_server")
+        while client.wait_for_service(0.25)==False:
+            self.get_logger().warn("wating for server")
+
+        request=SetBool.Request()
+        request.data=a
+        futur_obj=client.call_async(request)
+        
+        
+
+
+       
 
 
 def main (args=None):
     rclpy.init(args=args)
-    client=Node("My_client_node")
-    client_obj=client.create_client(AddTwoInts,"First_server")
-    while client_obj.wait_for_service(0.5)== False:
-        client.get_logger().warn("wait for server node")
-
-    req=AddTwoInts.Request()
-    req.a=0
-    req.b=0
-    future_obj=client_obj.call_async(req)
-    rclpy.spin_until_future_complete(client,future_obj)
-    reponse=future_obj.result()
-    client.get_logger().error(str(reponse.sum))
-
-    
+    node1=my_server()
+    rclpy.spin(node1)
     rclpy.shutdown()
 
 if __name__ == "__main__":
