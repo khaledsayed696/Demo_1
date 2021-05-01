@@ -1,0 +1,108 @@
+................................................Pub........................................
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from example_interfaces.msg import Int64
+
+class my_node (Node):
+    def __init__(self):
+        super().__init__("Node_name")
+        
+        self.create_timer(1/1,self.timer_call)
+        self.obj_pub=self.create_publisher(Int64,"number",10)
+
+        self.get_logger().info("Node is started")
+
+    def timer_call(self):
+        msg_int=Int64()
+        my_data= 5
+        msg_int.data=my_data
+        self.obj_pub.publish(msg_int)
+
+
+
+def main (args=None):
+    rclpy.init(args=args)
+    node=my_node()
+    rclpy.spin(node)
+
+    rclpy.shutdown()
+
+
+if __name__=="__main__":
+    main()
+    
+    
+    .............................................sub......................................
+    
+    #!/usr/bin/env python3
+
+import rclpy 
+from rclpy.node import Node
+from example_interfaces.msg import Int64
+from example_interfaces.srv import AddTwoInts
+
+class my_node(Node):
+    def __init__(self):
+        self.counter=0
+        super().__init__("numebr_counter")
+        self.create_subscription(Int64,"number",self.timer_call,10)
+        self.get_logger().info("subscriber is started")
+        self.obj_pub=self.create_publisher(Int64,"my_number",10)
+
+
+        self.create_service(AddTwoInts,"First_server",self.srv_call)
+        
+
+    def timer_call(self,msg):
+        self.counter+=msg.data
+        self.get_logger().info(str(self.counter)) 
+        
+
+    def srv_call(self,rq,rsp):
+        self.counter=0
+        req_a=rq.a
+        req_b=rq.b
+        rsp.sum=req_a+req_b
+        self.get_logger().info(str(rsp.sum))
+        return rsp
+
+
+def main (args=None):
+    rclpy.init(args=args)
+    node=my_node()
+    rclpy.spin(node)
+    rclpy.shutdown()
+
+
+if __name__=="__main__":
+    main()            
+
+..................................................Client...........................
+
+import rclpy
+from rclpy.node import Node
+from example_interfaces.srv import AddTwoInts
+
+
+def main (args=None):
+    rclpy.init(args=args)
+    client=Node("My_client_node")
+    client_obj=client.create_client(AddTwoInts,"First_server")
+    while client_obj.wait_for_service(0.5)== False:
+        client.get_logger().warn("wait for server node")
+
+    req=AddTwoInts.Request()
+    req.a=0
+    req.b=0
+    future_obj=client_obj.call_async(req)
+    rclpy.spin_until_future_complete(client,future_obj)
+    reponse=future_obj.result()
+    client.get_logger().error(str(reponse.sum))
+
+    
+    rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
