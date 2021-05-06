@@ -1,0 +1,19 @@
+Task1:
+arguments=['180', '-3', '100', '0', '0', '0', 'base_footprint', 'zed2_link'],
+arguments=['0.5', '0', '88', '3.14', '0', '0', 'base_footprint', 'mynt_link'],
+arguments=['180', '-50', '100', '1.57', '0', '0', 'base_footprint', 'imu_link'],
+
+Comment1:
+All x y z transforms are on meters and all roll pitch yaw angles are on radians.
+So 180 should be 1.8 m and so...
+
+Comment2:
+imu_link is  90 degree clockwise of base_footprint.
+clockwise means negative degree
+counter clockwise means positive degree
+
+Please Correct all you errors and Resubmit.
+
+
+Task2:
+Where is your submission? 
