@@ -1,0 +1,7 @@
+[0.098s] Invoking command in '/home/ubuntu/my_ws/src/second_pkg/build/second_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/my_ws/install/tekomoro_tf:/home/ubuntu/my_ws/install/python_qos_demo:/home/ubuntu/my_ws/install/first_pkg:/opt/ros/foxy /usr/bin/cmake /home/ubuntu/my_ws/src/second_pkg -DCMAKE_INSTALL_PREFIX=/home/ubuntu/my_ws/src/second_pkg/install/second_pkg
+[1.527s] -- The C compiler identification is GNU 9.3.0
+[2.329s] -- The CXX compiler identification is GNU 9.3.0
+[2.352s] -- Check for working C compiler: /usr/bin/cc
+[2.481s] -- Check for working C compiler: /usr/bin/cc -- works
+[2.483s] -- Detecting C compiler ABI info
+[2.609s] Invoked command in '/home/ubuntu/my_ws/src/second_pkg/build/second_pkg' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/my_ws/install/tekomoro_tf:/home/ubuntu/my_ws/install/python_qos_demo:/home/ubuntu/my_ws/install/first_pkg:/opt/ros/foxy /usr/bin/cmake /home/ubuntu/my_ws/src/second_pkg -DCMAKE_INSTALL_PREFIX=/home/ubuntu/my_ws/src/second_pkg/install/second_pkg
