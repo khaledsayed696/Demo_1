@@ -41,6 +41,7 @@ class my_node(Node):
         self.cou+=self.i
         
         self.current_fix = NavSatFix()
+        self.current_fix.header.stamp = self.get_clock().now().to_msg()
         self.current_fix.header.frame_id = self.frame_id
         self.current_fix.latitude = self.latitude
         self.current_fix.longitude = self.longitude
