@@ -1,0 +1,6 @@
+source;share/tekomoro_tf/hook/pythonpath.ps1
+source;share/tekomoro_tf/hook/pythonpath.dsv
+source;share/tekomoro_tf/hook/pythonpath.sh
+source;share/tekomoro_tf/hook/ament_prefix_path.ps1
+source;share/tekomoro_tf/hook/ament_prefix_path.dsv
+source;share/tekomoro_tf/hook/ament_prefix_path.sh

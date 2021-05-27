@@ -1,0 +1,45 @@
+[0.570s] Invoking command in '/home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf': PYTHONPATH=/home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/tekomoro_tf build --build-base /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build install --prefix /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf --record /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/install.log --single-version-externally-managed
+[1.044s] running egg_info
+[1.045s] creating build/tekomoro_tf/tekomoro_tf.egg-info
+[1.045s] writing build/tekomoro_tf/tekomoro_tf.egg-info/PKG-INFO
+[1.046s] writing dependency_links to build/tekomoro_tf/tekomoro_tf.egg-info/dependency_links.txt
+[1.046s] writing entry points to build/tekomoro_tf/tekomoro_tf.egg-info/entry_points.txt
+[1.046s] writing requirements to build/tekomoro_tf/tekomoro_tf.egg-info/requires.txt
+[1.047s] writing top-level names to build/tekomoro_tf/tekomoro_tf.egg-info/top_level.txt
+[1.099s] writing manifest file 'build/tekomoro_tf/tekomoro_tf.egg-info/SOURCES.txt'
+[1.224s] reading manifest file 'build/tekomoro_tf/tekomoro_tf.egg-info/SOURCES.txt'
+[1.226s] writing manifest file 'build/tekomoro_tf/tekomoro_tf.egg-info/SOURCES.txt'
+[1.226s] running build
+[1.227s] running build_py
+[1.227s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build
+[1.227s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib
+[1.227s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf
+[1.227s] copying tekomoro_tf/__init__.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf
+[1.228s] copying tekomoro_tf/state_publisher.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf
+[1.235s] copying tekomoro_tf/demo.launch.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf
+[1.235s] running install
+[1.248s] running install_lib
+[1.250s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf
+[1.251s] copying /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf/__init__.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf
+[1.251s] copying /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf/state_publisher.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf
+[1.251s] copying /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build/lib/tekomoro_tf/demo.launch.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf
+[1.252s] byte-compiling /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf/__init__.py to __init__.cpython-38.pyc
+[1.254s] byte-compiling /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf/state_publisher.py to state_publisher.cpython-38.pyc
+[1.257s] byte-compiling /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf/demo.launch.py to demo.launch.cpython-38.pyc
+[1.271s] running install_data
+[1.281s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/ament_index
+[1.281s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/ament_index/resource_index
+[1.281s] creating /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/ament_index/resource_index/packages
+[1.282s] copying resource/tekomoro_tf -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/ament_index/resource_index/packages
+[1.282s] copying package.xml -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.282s] copying launch/static_tf_pub.launch.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.282s] copying launch/teko.launch.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.283s] copying launch/demo.launch.py -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.283s] copying urdf/r2d2.rviz -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.290s] copying urdf/r2d2.urdf.xml -> /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/share/tekomoro_tf
+[1.301s] running install_egg_info
+[1.305s] Copying build/tekomoro_tf/tekomoro_tf.egg-info to /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages/tekomoro_tf-0.0.0-py3.8.egg-info
+[1.308s] running install_scripts
+[1.380s] Installing state_publisher script to /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/tekomoro_tf
+[1.381s] writing list of installed files to '/home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/install.log'
+[1.425s] Invoked command in '/home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf' returned '0': PYTHONPATH=/home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/tekomoro_tf build --build-base /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/build install --prefix /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/install/tekomoro_tf --record /home/ubuntu/Demo_1/ITI_LSV_ROS2/Lec6/LowSpeedCourse-pkg-gazebo/tekomoro_tf/build/tekomoro_tf/install.log --single-version-externally-managed
