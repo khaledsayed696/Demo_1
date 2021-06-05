@@ -42,20 +42,24 @@ class my_node (Node):
             self.point_5_y= msg.poses[5].pose.orientation.y
             self.point_6_z= msg.poses[10].pose.orientation.z
 
-        _,_,self.yaw_rad = self.euler_from_quaternion( msg.poses[3].pose.orientation)
-        _,_,self.yaw_rad2 = self.euler_from_quaternion( msg.poses[8].pose.orientation)
+            _,_,self.yaw_rad = self.euler_from_quaternion( msg.poses[3].pose.orientation)
+            _,_,self.yaw_rad2 = self.euler_from_quaternion( msg.poses[8].pose.orientation)
 
-        self.dif_yaw=self.yaw_rad2-self.yaw_rad
-        print(self.dif_yaw)
+            self.dif_yaw=self.yaw_rad2-self.yaw_rad
+            print(self.dif_yaw)
 
 
 
         self.curv= self.menger_curvature( self.point_1_x,self.point_1_y, self.point_2_x, self.point_2_y, self.point_3_x, self.point_3_y)
         
-        if (self.dif_yaw > 0 ):
-            self.get_logger().info("The robot is turning to the right with a curv" + str(self.curv)  ) 
+        if(self.curv <1):
+            self.get_logger().info("The path is straight") 
         else:
-            self.get_logger().info("The robot is turning to the left with curv" + str(self.curv)) 
+
+            if (self.dif_yaw < 0 ):
+                self.get_logger().info("The robot is turning to the right with a curv" + str(self.curv)  ) 
+            else:
+                self.get_logger().info("The robot is turning to the left with curv" + str(self.curv)) 
 
         self.get_logger().info( str(self.point_1_x) + str(self.point_1_y)) 
         self.get_logger().info( str(self.point_2_x)  + str(self.point_2_y))  
@@ -78,9 +82,12 @@ class my_node (Node):
 
     def menger_curvature(self, point_1_x, point_1_y, point_2_x, point_2_y, point_3_x, point_3_y):
         triangle_area = 0.5 * abs( (point_1_x*point_2_y) + (point_2_x*point_3_y) + (point_3_x*point_1_y) - (point_2_x*point_1_y) - (point_3_x*point_2_y) - (point_1_x*point_3_y))#Shoelace formula 
-            
-        curvature = (4*triangle_area) / (math.sqrt(pow(point_1_x - point_2_x,2)+pow(point_1_y - point_2_y,2)) * math.sqrt(pow(point_2_x - point_3_x,2)+pow(point_2_y - point_3_y,2)) * math.sqrt(pow(point_3_x - point_1_x,2)+pow(point_3_y - point_1_y,2)))#Menger curvature 
-        return curvature
+        
+        try:
+            curvature = (4*triangle_area) / (math.sqrt(pow(point_1_x - point_2_x,2)+pow(point_1_y - point_2_y,2)) * math.sqrt(pow(point_2_x - point_3_x,2)+pow(point_2_y - point_3_y,2)) * math.sqrt(pow(point_3_x - point_1_x,2)+pow(point_3_y - point_1_y,2)))#Menger curvature 
+            return curvature
+        except:
+            return 0 
 
 
     
